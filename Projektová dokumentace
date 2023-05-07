@@ -1,0 +1,46 @@
+Klientská karta
+Využití
+Aplikace uchovává údaje o klientovi, keté se hodí pro jakoukoliv opakující se práci. Především ale byla aplikace vytvořena pro mého tátu, jelikož podniká ve financích (konkrétně jako finanční poradce). Tím pádem každodenně pracuje s mnoha klienty. 
+Aplikace ukládá: 
+Email
+Telefonní číslo
+Rodné číslo
+Adresu bydliště
+Členy rodiny (už vedené v systému)
+Navíc umožňuje zapisovat si vlastní poznámky ke zaždému klientovi.
+Technologie
+Aplikace je programována v C#. Za použití Windows forms. Ve visual studio, 2022. Data jsou dále uchovávána v SQLite databázi. 
+Při programování jsem použil chat GPT, nicméně jelikož je většina programu založena na vizuálním vzhledu. Tak je z velké části stále vytvořena ručně.
+Vnitřní fungování
+Pokud uživatel zadá jméno klienta, program vyhledá v. Databázi. Jméno klienta. A zobrazí všechny informace k tomuto jménu. Program dále převede veškeré informace. Do. C# proměnných a Ty ukáže uživateli. 
+Ihned při otevření se naváže „spojení“ s SQLite databází a připraví se veškeřé funkce.
+Pokud uživatel změní jméno klienta, program nejdříve „vyčistí“ prostor pro údaje (v případě, že uživatel nenapíše jméno jiného klienta, nebo ho napíše špatně). Dále se prohledá databáze a všechny údaje k danému jménu se uloží do C# proměnných. Tyto proměnné se dále ukáží uživateli v uživatelském prostředí. Nakonec se jen synchronizují údaje o rodině (viz. později). 
+Pokud klient zatím není vedený v databázi, tak se UI přizpůsobí pro vytvoření nového klienta.
+Tlačítko upravit umožňuje uživateli změnit jednotlivé údaje u klienta.
+Aby uživatel omylem nezměnil údaje o klientovi, tak jsou textBoxy uzavřené, dokud se nepoužije tlačítko upravit. Proto se ihned musí rozhodnout, zda uživatel chce upravovat – umožnit úpravy, nebo uložit – úpravy zakázat. 
+Aby bylo možné upravit. Údaje o členů rodiny, musí program schovat tlačítko rodinného příslušníka, aby uživatel viděl textbox, do kterého může následně psát.
+Dále se všechny údaje z uživatelského rozhraní uloží do promněnných a ty se uloží do databáze k příslušnému jménu. Pokud už je klient vedený v databázi, tak se jen upraví jeho údaje a pokud se jedná o nového klienta, tak se vytvoří nový záznam.
+
+Po kliknutí na člena rodiny se zmnění jméno ve vyhledávači a tím pádem můřžeme rychle vidět jeho údaje, aniž by jsme museli přepisovat jméno.
+
+V aplikace jsou 4 kategorie zápisků. Po kliknutí na tlačítko se zkontroluje, jestli už nebylo tlačítko dříve použito. Pokud ne, zobrazí se 4 další podkategorie. Když uživatel klikne na jednu z těchto možnstí, zobrazí se samotné poznámky k jednotlivé podkategorii, jako je např. hypotéka, pojištění auta, riskantní investice, nebo další spoření.  Zde jde možné upravovat poznámky rovnou, jelikož se tyto poznámky budou pravděpodobně velmi často měnit a tím pádem by bylo neefektivní muset neustále klikat na tlačítko pro úpravu.
+
+Návod k použití
+Hlavní obrazovka
+Po úspěšném spuštění aplikace se zobrazí Hlavní obrazovka. Zde můžete rovnou začít pracovat. 
+Vytvoření nového klienta
+Pokud jste aplikaci právě spustili poprvé a nemáte v databázi vedené žádné klienty, nebo pokud jste právě získali nového zákazníka, musíte vytvořit nový klientský profil. Proto napište do vyhledávače jméno vašeho klienta a klikněte na tlačítko „Nový klient“ (v dolní části obrazovky). Nyní můžete napsat všechny základní informace, ketré o klientovi máte. (např. telefonní číslo, rodné čílo, nebo členy rodiny) Pokud vám nějaká z těchto infromací chybí, nechte pole prázdné a pokračujte dále, protože múžete údaje kdykoliv doplnit. (viz. Odstavec o úpravě údajů)
+Úprava údajů
+Pokud chcete upravit informace o klientovi, kterého jste už vytvořili, stačí vyhledat klienta v seznamu. Tím se zobrazí detailní informace o klientovi a můžete je pomocí tlačítka „Upravit“ jednoduše změnit. Můžete upravit jakékoli informace o klientovi, jako je nafjopříklad změna jeho telefonního čísla, nebo e-mailové adresy.
+Poznámky
+Pokud si chcete vytvořit své vlastní poznámky, vyberte kategorii a v ní vyberte podkategorii. Zde už se nacházíte v oblasti poznámek, ketré můžete okamžitě upravovat. Jedná se o velký prostor, kde můžete psát jaký text se vám jen zachce.
+Až budetze mít své vlastní poznámky dopsané, můsíte je uložit. To uděláte tak, že kliknete na tlačítko „Upravit“, které jsme si už vysvětlili dříve.
+Tlačítko Domů
+Pokud si nepřejete uložit poznámky, které jste si právě vytvořili, nebo se chcete vrátit do hlavní nabídky, klikněte na tlačítko „Domů“. 
+
+Plány do budoucna
+V budoucnu by bylo určitě potřeba vylepšit design. Vzhled měl původně vypadat úplně jinak, ale kvůli náhlé změně při vytváření se situace velmi změnila a už nebyl prostor design nadále upravovat. (budu dělat design úplně od začátku)  Rád bych přidal ještě druhou sekci poznámek, ketré by byly lépe upravitelné, případně nějak přehledněji zavedené. V programu je ještě mnoho detilů, které by se měly opravit a tak se v budoucnu uřčitě pokusím všechny chyby doladit.
+Reálné využití
+Jak už jsem zmínil, aplikace bude sloužit mému tátovi, který podniká ve financích a potřeboval lepší přehled o svých klientech.
+Závěrečné shrnutí
+Na tomto projektu jsem se toho velmi hodně naučil. Za dobu tvorby jsem se naučil více než 50% zkušeností a informací, které mám teď. Byl to pro mě takový úvod do světa programování, díky kterému jsem se mimochodem pochopil i správně využití C#. Dnes bych už tuto aplikaci vytvořil úplně jinak (vůbec bych nepoužil C#, ani SQLite). Jako projekt do PVA bych dnes dělal úplně něco jiného, nicméně už jsem si své téma vybral a naučil jsem se spoustu zkušeností.
